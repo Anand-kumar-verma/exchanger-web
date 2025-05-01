@@ -1,24 +1,51 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router';
+import UsersLayout from './layout/usersLayout';
+import { userRoutes } from './routes/userRoutes';
+import { walletRoutes } from './routes/walletRoute';
+import WalletLayout from './layout/usersLayout/walletLayout';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {userRoutes.map((route) => {
+          return (
+            <Route
+              key={route.id}
+              path={route.path}
+              element={
+                <UsersLayout
+                  id={route.id}
+                  navLink={route.path}
+                  navItem={route.navItem}
+                  isHeader={route.isHeader}
+                  component={route.component}
+                />
+              }
+            />
+          );
+        })}
+        {walletRoutes.map((route) => {
+          return (
+            <Route
+              key={route.id}
+              path={route.path}
+              element={
+                <WalletLayout
+                  id={route.id}
+                  navLink={route.path}
+                  navItem={route.navItem}
+                  isHeader={route.isHeader}
+                  component={route.component}
+                />
+              }
+            />
+          );
+        })}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
