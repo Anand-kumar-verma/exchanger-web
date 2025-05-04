@@ -20,7 +20,7 @@ function AssetOverview() {
 
 
     return (
-        <div className="pl-6 py-2 w-full  h-screen overflow-y-auto hide-scrollbar" >
+        <div className="px-6 py-2 w-full  h-screen overflow-y-auto hide-scrollbar" >
             <div className='flex flex-row items-center justify-between'>
                 <div className='flex items-center gap-3'>
                     <RiCheckboxMultipleBlankFill className='text-secondary' size={25} />

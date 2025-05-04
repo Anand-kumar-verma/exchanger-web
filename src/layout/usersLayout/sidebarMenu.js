@@ -5,7 +5,6 @@ import { MdOutlineManageAccounts } from 'react-icons/md';
 import { useNavigate } from 'react-router';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
 export const SidebarMenu = () => {
     const navigate = useNavigate()
     const location = window.location.pathname

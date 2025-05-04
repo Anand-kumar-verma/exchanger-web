@@ -6,10 +6,11 @@ function CustomButton({
   variant = "contained",
   className,
   startIcon,
+  size='small',
   onClick = () => { },
 }) {
   return (
-    <Button onClick={onClick} startIcon={startIcon && startIcon} variant={variant} size='small' className={` ${className}  !bg-secondary !px-5 !font-medium  !capitalize`}>
+    <Button onClick={onClick} startIcon={startIcon && startIcon} variant={variant} size={size} className={` ${className}  !bg-secondary !px-5 !font-medium  !capitalize`}>
       {title}
     </Button>
   )

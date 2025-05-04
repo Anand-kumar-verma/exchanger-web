@@ -19,7 +19,7 @@ import classNames from 'classnames';
 const tabArr = [
   {
     title: "About",
-    nav: "/",
+    nav: "/about",
   },
   {
     title: "Sport Trade",
@@ -100,9 +100,10 @@ function Header({ isHeader }) {
             </div>
           </div>
           <div className='flex flex-row items-center py-3 gap-3'>
-            <CustomButton title='Deposit' className={"!hidden sm:!block"} />
+            
+            
             <CustomMenu
-              avatarText={<LuWallet size={18} color='black' />}
+              avatarText={<CustomButton title='Deposit' className={"!hidden sm:!block"} />}
               avatarUrl=''
               className='!px-3 pb-3'
               tooltipTitle='Wallet Details'
@@ -140,6 +141,7 @@ function Header({ isHeader }) {
                 </div>
               </div>
             </CustomMenu>
+            <LuWallet size={18} color='black' />
             <FaRegCircleUser size={25} onClick={() => setDrawerOpen(true)} className='text-secondary cursor-pointer' />
             <div className='border-r h-8 border-secondary' />
 

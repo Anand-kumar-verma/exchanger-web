@@ -1,5 +1,5 @@
 
-import Home from "../pages/users/home";
+
 import ManageBank from "../pages/users/profilePages/manageBank";
 import NewsAndUpdate from "../pages/users/profilePages/newsAndUpdate";
 import NomineeDetails from "../pages/users/profilePages/nomineeDetails";
@@ -19,17 +19,18 @@ import Market from "../pages/default/market";
 import Order from "../pages/default/order";
 import Transactions from "../pages/default/transactions";
 import Assets from "../pages/default/assets";
+import Home from "../pages/default/home";
 export const userRoutes = [
     {
         id:0,
-        path: "/",
+        path: "/about",
         component: <About />,
         navItem: "About",
         isHeader: false,
     },
     {
         id:1,
-        path: "/home",
+        path: "/",
         component: <Home />,
         navItem: "Home",
         isHeader: false,

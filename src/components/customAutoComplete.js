@@ -10,8 +10,11 @@ export default function CustomAutoComplete({
     return (
         <Autocomplete
             id="country-select-demo"
-            className={classNames(className, '!w-full !border-none !bg-[#e7e8ea]')}
-            sx={{ width: 300 }}
+            className={classNames(className, ' !border-none !bg-[#e7e8ea]')}
+            sx={{
+                width: '100%',
+                maxWidth: { xs: 300, sm:"100%"  },
+            }}
             options={countries}
             autoHighlight
             getOptionLabel={(option) => option.label}

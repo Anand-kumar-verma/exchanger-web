@@ -24,17 +24,17 @@ const tokenDepositArr = [
 ];
 
 export default function Deposit() {
-   
+
     return (
-        <div className="pl-6 py-2 w-full  h-screen overflow-y-auto hide-scrollbar" >
-            <div className='flex flex-row items-center justify-between'>
+        <div className="py-2 w-full  h-screen overflow-y-auto hide-scrollbar" >
+            <div className='flex px-6  flex-row items-center justify-between'>
                 <div className='flex items-center gap-3'>
                     <FaMoneyBillWave className='text-secondary' size={25} />
                     <span className='text-lg font-semibold  gap-2 text-black'>Deposit</span>
                 </div>
                 <CustomButton title='Deposit Code' variant='outlined' className='!bg-transparent !border !border-gray-300 !shadow-none !text-black   !text-sm ' />
             </div>
-            <div className="w-full text-start float-start  px-4 py-6">
+            <div className="w-full overflow-x-auto text-start float-start  md:px-4 py-6">
 
                 <Stepper
                     steps={steps}
@@ -51,7 +51,9 @@ export default function Deposit() {
                         size: '1.5em',
                         circleFontSize: '1em',
                         labelFontSize: '0.9em',
+
                         borderRadius: '50%',
+                    
                     }}
                     connectorStyleConfig={{
                         completedColor: '#6BA539',
@@ -59,13 +61,15 @@ export default function Deposit() {
                         disabledColor: '#ccc',
                         size: 3,
                         style: 'dotted',
+                    
 
                     }}
                     color='#6BA539'
+                    width={300}
 
                 />
             </div>
-            <div className="w-full text-start grid grid-cols-1 md:grid-cols-7 gap-4  py-1">
+            <div className="w-full px-6 text-start grid grid-cols-1 md:grid-cols-7 gap-4  py-1">
                 <div className='md:col-span-4 '>
                     <div className='flex flex-row '>
                         <div className="flex flex-row">
@@ -95,15 +99,15 @@ export default function Deposit() {
                                     <Label className='!text-lg' title='Choose token to deposit' />
                                     <Label title='toekn' />
                                 </div>
-                                <CustomAutoComplete />
+                                <CustomAutoComplete className='sm:!w-full !w-[100] ' />
 
-                                <div className='flex flex-row items-center gap-3 mt-3'>
+                                {/* <div className='flex flex-row items-center gap-3 mt-3'>
                                     {
                                         tokenDepositArr?.map((item, index) =>
                                             <CustomChips className='!border-none !bg-gray-200' label={item.name} key={index} icon={item?.icon} />
                                         )
                                     }
-                                </div>
+                                </div> */}
                             </div>
 
 
@@ -112,13 +116,13 @@ export default function Deposit() {
                                     <Label className='!text-lg' title='Choose a network' />
                                     <Label title='network' />
                                 </div>
-                                <CustomAutoComplete />
+                                <CustomAutoComplete className='sm:!w-full !w-[100] ' />
                             </div>
-                            <div className='flex flex-col mt-4'>
+                            {/* <div className='flex flex-col mt-4'>
                                 <Label className='!text-lg' title='Confirm deposit details' />
                                 <div>
                                     <div className="space-y-6">
-                                        {/* Notice */}
+                                       
                                         <div className="bg-gray-100 p-4 rounded-md text-xs text-gray-700">
                                             <p>
                                                 Please note: Deposits will be auto channeled to and can be viewed under the{' '}
@@ -129,7 +133,7 @@ export default function Deposit() {
                                             <CustomButton title='Acknowledge' className={"!w-full !mt-2"} />
                                         </div>
 
-                                        {/* Details Table */}
+                                      
                                         <div className="bg-transparent p-4 border rounded-md">
                                             <div className="grid grid-cols-2 gap-4 text-xs text-gray-700">
                                                 <div className="flex items-center gap-1">
@@ -154,7 +158,7 @@ export default function Deposit() {
                                     </div>
 
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
 
                     </div>
@@ -193,8 +197,8 @@ export default function Deposit() {
             </div>
 
 
-            <div className="max-w-5xl mx-auto p-6  rounded-lg shadow space-y-4">
-                {/* Tabs */}
+            {/* <div className="max-w-5xl mx-auto p-6  rounded-lg shadow space-y-4">
+               
                 <div className="flex gap-4 border-b">
                     <button className="pb-2 border-b-2 border-black font-semibold text-gray-900">
                         Past USDT Deposits
@@ -202,9 +206,9 @@ export default function Deposit() {
                     <button className="pb-2 text-gray-500 hover:text-black">Deposit History</button>
                 </div>
 
-                {/* Filter Section */}
+               
                 <div className="grid grid-cols-6 gap-4 items-end">
-                    {/* Type Dropdown */}
+                   
                     <div className="relative">
                         <label className="text-sm text-gray-700">Type</label>
                         <select className="w-full border rounded px-2 py-1 text-sm appearance-none pr-6">
@@ -215,7 +219,7 @@ export default function Deposit() {
                         <FaChevronDown className="absolute right-2 bottom-3 text-xs text-gray-500 pointer-events-none" />
                     </div>
 
-                    {/* Wallet Dropdown */}
+                   
                     <div className="relative">
                         <label className="text-sm text-gray-700">Wallet</label>
                         <select className="w-full border rounded px-2 py-1 text-sm appearance-none pr-6">
@@ -226,7 +230,7 @@ export default function Deposit() {
                         <FaChevronDown className="absolute right-2 bottom-3 text-xs text-gray-500 pointer-events-none" />
                     </div>
 
-                    {/* Status Dropdown */}
+                   
                     <div className="relative">
                         <label className="text-sm text-gray-700">Status</label>
                         <select className="w-full border rounded px-2 py-1 text-sm appearance-none pr-6">
@@ -237,7 +241,7 @@ export default function Deposit() {
                         <FaChevronDown className="absolute right-2 bottom-3 text-xs text-gray-500 pointer-events-none" />
                     </div>
 
-                    {/* From Date */}
+                   
                     <div>
                         <label className="text-sm text-gray-700">From Date</label>
                         <input
@@ -246,7 +250,7 @@ export default function Deposit() {
                         />
                     </div>
 
-                    {/* To Date */}
+                    
                     <div>
                         <label className="text-sm text-gray-700">To Date</label>
                         <input
@@ -255,12 +259,12 @@ export default function Deposit() {
                         />
                     </div>
 
-                    {/* Search Button */}
+                  
                     <div>
                         <CustomButton title='Search' />
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

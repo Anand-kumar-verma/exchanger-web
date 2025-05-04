@@ -8,8 +8,8 @@ import { IoLogoInstagram } from "react-icons/io";
 
 function Footer() {
   return (
-    <footer class="bg-gray-100 shadow-md !container flex flex-col items-center justify-center shadow-white border-t border-gray-300  py-10">
-      <div class="max-w-7xl mx-auto container px-4 grid grid-cols-2 md:grid-cols-5 gap-8 text-gray-700 text-sm">
+    <footer class="bg-gray-50 shadow-md  w-full flex flex-col items-center justify-center shadow-white border-t border-gray-300  py-10">
+      <div class="max-w-7xl mx-auto !container  px-4 grid grid-cols-2 md:grid-cols-5 gap-8 text-gray-700 text-sm">
 
         <div>
           <h3 class="font-bold text-black mb-4">About</h3>
