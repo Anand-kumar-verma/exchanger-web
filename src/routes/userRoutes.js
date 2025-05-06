@@ -21,6 +21,7 @@ import Transactions from "../pages/default/transactions";
 import Assets from "../pages/default/assets";
 import Home from "../pages/default/home";
 export const userRoutes = [
+  
     {
         id:0,
         path: "/about",

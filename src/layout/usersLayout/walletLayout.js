@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './header'
 import Footer from './footer'
 import { WalletSidebar } from './sidebarMenu';
+import BottomTab from './bottomTab';
 const WalletLayout = ({ isHeader, component }) => {
     return (
         <div className={isHeader ? "" : 'bg-gray-100'}>
@@ -15,8 +16,9 @@ const WalletLayout = ({ isHeader, component }) => {
                 <div className='w-full mt-3 mr-6'>{component}</div>
             </div>
 
-            <div>
+            <div className='sm:pb-0 pb-20 bg-white'>
                 <Footer />
+                <BottomTab />
             </div>
         </div>
     );

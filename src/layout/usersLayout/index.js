@@ -3,36 +3,49 @@ import Header from './header'
 import Footer from './footer'
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { SidebarMenu } from './sidebarMenu';
-const UsersLayout = ({ isHeader,navLink, component }) => {
+import BottomTab from './bottomTab';
+const UsersLayout = ({ isHeader, navLink, component }) => {
+  
   return (
-    <div className={isHeader ? "" : 'bg-gray-100'}>
+    <div className={isHeader ? "" : 'bg-gray-50'}>
       <div className="font-bold text-green-300 ">
         <Header isHeader={isHeader} />
       </div>
-      {isHeader ? 
-      <div className={`r-5  ${navLink==="/profile-information" ? "" : "pt-6"} `}>
-        <div className="flex pl-5 flex-col gap-2">
-          <h1 className="text-xl font-bold text-gray-400 ">My Account</h1>
-          <div className="bg-secondary rounded-lg text-justify md:text-start p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
-            <p className="text-gray-200 text-sm leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
-            </p>
+      {isHeader ?
+        <div className={`r-5 pt-2  ${navLink === "/profile-information" ? "" : "pt-6"} `}>
+          <div className="flex pl-5 pr-5 flex-col gap-2">
+            <h1 className="text-xl font-bold text-gray-400 ">My Account</h1>
+            <div className="bg-secondary overflow-hidden rounded-lg text-justify md:text-start p-2 md:p-4 flex items-center justify-between gap-3 relative">
+              {/* Mobile marquee scrolling text */}
+              <div className="md:hidden overflow-hidden whitespace-nowrap">
+                <p className="animate-marquee text-gray-200 text-sm leading-relaxed inline-block">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
+                </p>
+              </div>
 
-            <MdKeyboardArrowDown className="text-white text-2xl hidden md:block md:ml-4" />
-          </div>
+              {/* Static text for md+ */}
+              <p className="hidden md:block text-gray-200 text-sm leading-relaxed flex-1">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.
+              </p>
 
-        </div>
-        <div className="flex w-full flex-row gap-2 mt-5">
-          <div className='w-56 hidden lg:block'>
-            <SidebarMenu />
+              {/* Right arrow icon - always visible */}
+              <MdKeyboardArrowDown className="text-white text-2xl shrink-0" />
+            </div>
+
+
           </div>
-          <div className='w-full'>{component}</div>
-        </div>
-      </div> :
-        <div className='w-full pt-5'>{component}</div>
+          <div className="flex w-full flex-row gap-2 mt-5">
+            <div className='w-56 hidden lg:block'>
+              <SidebarMenu />
+            </div>
+            <div className='w-full'>{component}</div>
+          </div>
+        </div> :
+        <div className={navLink==="/sport-trade" ? "w-full":'w-full pt-5'}>{component}</div>
       }
-      <div>
+      <div className='sm:pb-0 pb-20 bg-white'>
         <Footer />
+        <BottomTab/>
       </div>
     </div>
   );

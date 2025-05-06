@@ -13,7 +13,7 @@ export default function CustomAutoComplete({
             className={classNames(className, ' !border-none !bg-[#e7e8ea]')}
             sx={{
                 width: '100%',
-                maxWidth: { xs: 300, sm:"100%"  },
+                maxWidth: {  sm:"100%"  },
             }}
             options={countries}
             autoHighlight

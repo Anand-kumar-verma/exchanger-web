@@ -7,14 +7,14 @@ import { IoMdLock } from "react-icons/io";
 import { HiUsers } from "react-icons/hi2";
 function SaferyAndSecurity() {
     return (
-        <div className="pl-6 py-2 w-full  min-h-lvh md:min-h-screen overflow-y-auto hide-scrollbar" >
+        <div className="px-6 py-2 w-full  min-h-lvh md:min-h-screen overflow-y-auto hide-scrollbar" >
             <div className=" ">
 
                 <div className='flex items-center gap-2'>
                     <FaShieldAlt className='text-secondary' size={25} />
                     <span className='text-lg font-semibold  gap-2 text-black'>Safety & Security</span>
                 </div>
-                <div className="space-y-8 pl-5 mt-5">
+                <div className="space-y-8 sm:pl-5 mt-5">
                     <div className="flex justify-between  items-center">
                         <div className="flex items-center">
                             <SlSocialGoogle className="text-secondary mr-4 mt-1" size={25} />

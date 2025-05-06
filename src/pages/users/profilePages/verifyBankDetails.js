@@ -15,8 +15,8 @@ const bankDetails = [
 
 export default function VerifyBankDetails() {
     return (
-        <div className=" bg-gray-100 ">
-            <div className="max-w-3xl mx-auto">
+        <div className=" bg-gray-100 h-screen ">
+            <div className="sm:max-w-3xl mx-auto">
                 <div className="flex items-center justify-between mb-4">
                     <h2 className="text-lg font-semibold text-gray-700">Verify Bank Details</h2>
 
@@ -24,11 +24,11 @@ export default function VerifyBankDetails() {
                 <div className="relative bg-white rounded-lg border border-gray-200 p-6">
                     <div className="flex flex-row items-center justify-between mb-4">
                         <CustomButton title="Add Bank Details" startIcon={<IoMdAdd />} />
-                        <button className="absolute top-16 bg-black p-1 rounded right-[350px] text-gray-200 hover:text-gray-300">
+                        <button className="absolute top-16 bg-black p-1 rounded left-0 md:right-[350px] text-gray-200 hover:text-gray-300">
                             <FaEdit size={16} />
                         </button>
                     </div>
-                    <div className="space-y-4 bg-white border border-gray-300 w-96 p-5 rounded-md shadow">
+                    <div className="space-y-4 bg-white border border-gray-300 sm:w-96 p-5 rounded-md shadow">
 
                     
 

@@ -87,7 +87,9 @@ function Header({ isHeader }) {
       <div className='border-b shadow fixed w-full z-50 bg-white border-gray-300 mx-auto'>
         <div className='px-5 md:px-10 mx-auto flex flex-row items-center justify-between'>
           <div className='flex flex-row items-center py-3 gap-3'>
-            <img src='https://bscscan.com/assets/bsc/images/svg/logos/logo-light.svg?v=25.4.3.0'
+            <img
+              onClick={() => navigate("/")}
+              src='https://bscscan.com/assets/bsc/images/svg/logos/logo-light.svg?v=25.4.3.0'
               alt='logo'
               className='h-8' />
             <div className='hidden lg:block lg:flex flex-row items-center gap-3'>
@@ -100,8 +102,8 @@ function Header({ isHeader }) {
             </div>
           </div>
           <div className='flex flex-row items-center py-3 gap-3'>
-            
-            
+
+
             <CustomMenu
               avatarText={<CustomButton title='Deposit' className={"!hidden sm:!block"} />}
               avatarUrl=''

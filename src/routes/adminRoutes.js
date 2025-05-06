@@ -1,11 +1,11 @@
-// import About from "../pages/default/about";
-// export const userRoutes = [
-//     {
-//         id:1,
-//         path: "/about",
-//         component: <About />,
-//         navItem: About,
-//         isHeader: false,
-//     },
+import Dashboard from "../pages/admin/dashboard";
+export const adminRoutes = [
+    {
+        id:1,
+        path: "/dashboard",
+        component: <Dashboard />,
+        navItem: "Dashboard",
+        isHeader: false,
+    },
 
-// ]
+]

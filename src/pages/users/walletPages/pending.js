@@ -2,8 +2,8 @@ import React from 'react'
 
 function Pending() {
   return (
-    <div>
-      Pending
+    <div className='h-96 flex items-center justify-center'>
+      Pending page
     </div>
   )
 }

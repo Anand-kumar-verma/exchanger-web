@@ -4,7 +4,7 @@ import { RxDashboard } from "react-icons/rx";
 import { HiUserGroup } from "react-icons/hi2";
 function OfflineManualKYC() {
     return (
-        <div className="pl-6 py-2 w-full  bg-gray-50" >
+        <div className="px-6 py-2 w-full h-screen md:h-full  bg-gray-50" >
 
 
             <div className='flex items-center gap-2'>
@@ -12,7 +12,7 @@ function OfflineManualKYC() {
                 <span className='text-lg font-semibold  gap-2 text-black'>Offline/Manual KYC</span>
             </div>
             <div className="mt-5">
-                <p className='text-xs text-primary font-serif'>You can complete you KYC an Bitalx in less than 1 min, Just verify your Aahar number with OTP from UIDAL and enter low profile details, Bank Details thats it.</p>
+                <p className='text-xs text-gray-400 font-serif text-justify md:text-start'>You can complete you KYC an Bitalx in less than 1 min, Just verify your Aahar number with OTP from UIDAL and enter low profile details, Bank Details thats it.</p>
                 <CustomButton title='Update your KYC' startIcon={<RxDashboard />} className={"!mt-2"} />
             </div>
 

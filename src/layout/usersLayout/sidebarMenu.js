@@ -79,7 +79,7 @@ export const WalletSidebar = () => {
             </ul>
 
             <div className={`bg-white   mt-8 md:hidden block`}>
-                <div className=" px-4 w-full overflow-hidden">
+                <div className=" md:px-4 w-full overflow-hidden">
                     <div className="max-w-screen-lg mx-auto">
                         <Tabs
                             value={value}

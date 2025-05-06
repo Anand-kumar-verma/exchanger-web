@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 import { FaBitcoin } from 'react-icons/fa';
 import CustomButton from './customButton';
-
+import { Skeleton, Box, Typography, IconButton } from '@mui/material';
 function Card({
     id = "",
     title = "",
@@ -63,7 +63,38 @@ function Card({
     }, [btcData]); // Re-run when btcData is available
 
     if (!btcData) {
-        return <div className="text-center py-4">Loading {title} data...</div>;
+        return <Box
+            sx={{
+                backgroundColor: 'white',
+                borderRadius: 2,
+                boxShadow: 3,
+                p: 2,
+                fontFamily: 'sans-serif',
+            }}
+        >
+            {/* Header */}
+            <Box display="flex" alignItems="center" mb={2}>
+                <Skeleton variant="circular" width={24} height={24} />
+                <Skeleton variant="text" width="30%" sx={{ ml: 1 }} />
+                <Skeleton variant="text" width={20} sx={{ ml: 'auto' }} />
+            </Box>
+
+            {/* Chart Area */}
+            <Skeleton variant="rectangular" height={176} width="100%" sx={{ mb: 2 }} />
+
+            {/* Info Grid */}
+            <Box display="grid" gridTemplateColumns="1fr 1fr" gap={2} mb={2}>
+                {[...Array(4)].map((_, i) => (
+                    <Box key={i}>
+                        <Skeleton variant="text" width="60%" />
+                        <Skeleton variant="text" width="80%" />
+                    </Box>
+                ))}
+            </Box>
+
+            {/* Button */}
+            <Skeleton variant="rectangular" height={40} width="100%" />
+        </Box>
     }
 
     return (
