@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { FaBitcoin } from 'react-icons/fa';
 import CustomButton from './customButton';
 import { Skeleton, Box, Typography, IconButton } from '@mui/material';
+import { useNavigate } from 'react-router';
 function Card({
     id = "",
     title = "",
@@ -12,13 +13,8 @@ function Card({
     symbolTitle = "BINANCE"
 }) {
     const chartRef = useRef(null);
+    const navigate = useNavigate()
     const [btcData, setBtcData] = useState(null);
-
-
-    console.log(id, title, coinEndUrl, icons, symbol, "symbol");
-
-
-
     useEffect(() => {
         const fetchBTCData = async () => {
             try {
@@ -141,7 +137,12 @@ function Card({
                 </div>
             </div>
 
-            <CustomButton title="Trade" className={'!w-full'} />
+            <CustomButton title="Trade" onClick={() => navigate("/sport-trade", {
+                state: {
+                    symbol: symbol,
+                    coinEndUrl: coinEndUrl
+                }
+            })} className={'!w-full'} />
         </div>
     );
 }

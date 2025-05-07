@@ -91,7 +91,7 @@ function Header({ isHeader }) {
               onClick={() => navigate("/")}
               src='https://bscscan.com/assets/bsc/images/svg/logos/logo-light.svg?v=25.4.3.0'
               alt='logo'
-              className='h-8' />
+              className='h-8 cursor-pointer' />
             <div className='hidden lg:block lg:flex flex-row items-center gap-3'>
               {
                 tabArr?.map((item, index) =>

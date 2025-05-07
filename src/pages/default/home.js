@@ -7,7 +7,7 @@ import CustomButton from '../../components/customButton';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import { useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import CustomMenu from '../../components/customMenu';
 import { IoIosArrowDown } from 'react-icons/io';
 import Card from '../../components/card';
@@ -252,14 +252,16 @@ const supportArr = [
 
 const Home = () => {
   const [value, setValue] = useState(0);
+  
   const navigate = useNavigate()
+
+
 
   const handleChange = (event, newValue) => {
     console.log(menuItems?.[newValue]?.nav, "newValue");
     setValue(newValue);
     navigate(menuItems?.[newValue]?.nav);
   };
-  const location = window.location.pathname
   const settings = {
     dots: false,
     infinite: true,
@@ -326,8 +328,8 @@ const Home = () => {
         </div>
 
         <div className='mt-16 px-8 md:px-16'>
-        <h1 className='text-start md:text-center text-xl md:text-4xl font-bold text-gray-900 '>
-        Seize Your Opportunity
+          <h1 className='text-start md:text-center text-xl md:text-4xl font-bold text-gray-900 '>
+            Seize Your Opportunity
           </h1>
           <div className=" mt-8  mx-auto">
             <Tabs
@@ -392,8 +394,8 @@ const Home = () => {
 
 
         <div className='mt-16 px-8 md:px-16'>
-        <h1 className='text-start md:text-center text-xl md:text-4xl font-bold text-gray-900 '>
-        Build Your Portfolio
+          <h1 className='text-start md:text-center text-xl md:text-4xl font-bold text-gray-900 '>
+            Build Your Portfolio
           </h1>
           <div className="grid grid-cols-1 mt-5 md:grid-cols-2 lg:grid-cols-3 gap-6 p-0 md:p-6">
             {cards.map((card, index) => (

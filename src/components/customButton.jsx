@@ -10,7 +10,7 @@ function CustomButton({
   onClick = () => { },
 }) {
   return (
-    <Button onClick={onClick} startIcon={startIcon && startIcon} variant={variant} size={size} className={` ${className}  !bg-secondary !px-5 !font-medium  !capitalize`}>
+    <Button onClick={onClick} startIcon={startIcon && startIcon}  variant={variant} size={size} className={`   !bg-secondary !px-5 !font-medium  !capitalize ${className}`}>
       {title}
     </Button>
   )

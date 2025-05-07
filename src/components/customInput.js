@@ -1,4 +1,4 @@
-import { FormHelperText, TextField } from "@mui/material";
+import { FormHelperText, InputAdornment, TextField } from "@mui/material";
 import classNames from "classnames";
 import React from "react";
 
@@ -22,6 +22,7 @@ const CustomInput = ({
   onFocus,
   onBlur,
   color = "primary",
+  endIcons=<InputAdornment position="start">kg</InputAdornment>
 }) => {
   return (
     <div className="flex flex-col justify-center">
@@ -49,6 +50,11 @@ const CustomInput = ({
           "!rounded !outline-none placeholder:!text-gray-100 !capitalize !backdrop-blur-mk !bg-white !bg-opacity-20 !border-opacity-30 !border !border-white",
           className
         )}
+        slotProps={{
+          input:{
+            endAdornment:endIcons
+          }
+        }}
       />
       {formik && (
         <FormHelperText className="!text-red-500 !mx-1">

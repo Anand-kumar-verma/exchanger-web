@@ -1,9 +1,13 @@
 import React, { useState, useEffect, useMemo } from "react";
+import { useLocation } from "react-router";
 
 const OrderBook = () => {
+    const location = useLocation();
+    const { symbol } = location?.state || {};
     const [bids, setBids] = useState([]);
     const [asks, setAsks] = useState([]);
-    const socket = useMemo(() => { return new WebSocket("wss://stream.binance.com:9443/ws/btcusdt@depth5") }, []
+    const btcCoins = symbol === undefined ? "btcusdt" : symbol
+    const socket = useMemo(() => { return new WebSocket(`wss://stream.binance.com:9443/ws/${btcCoins.toLowerCase()}@depth5`) }, []
     )
     useEffect(() => {
 
@@ -17,7 +21,7 @@ const OrderBook = () => {
     }, [socket]);
 
     return (
-        <div className=" shadow h-screen">
+        <div className=" ">
             <div className="flex px-3 pt-5 flex-row items-center pb-1 border-b border-gray-300 gap-3">
                 <p className="text-black font-semibold  text-sm">Order Book </p>
                 <p className="text-gray-400 font-semibold  text-sm">Recent Trades</p>
@@ -50,7 +54,7 @@ const OrderBook = () => {
                             <th className="text-green-500 text-xs">Price (USDT)</th>
                             <th className="text-green-500 text-xs">-</th>
                             <th className="text-green-500 text-xs">Quantity</th>
-                        
+
                         </tr>
                     </thead>
                     <tbody>

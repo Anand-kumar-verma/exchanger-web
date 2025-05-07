@@ -28,7 +28,7 @@ const CoinData = () => {
       showChart: false,
       locale: "en",
       width: "100%",
-      height: 700,
+      height: 1000,
       isTransparent: false,
       showSymbolLogo: true,
       scaleFontColor: "rgba(106, 109, 120, 1)",
@@ -68,7 +68,7 @@ const CoinData = () => {
   }, []);
 
   return (
-    <div>
+    <div className="">
       <div className="tradingview-widget-container" ref={containerRef}></div>
       <div>
         {selectedCoin && <p>Selected Coin: {selectedCoin}</p>}
