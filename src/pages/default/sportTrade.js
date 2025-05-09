@@ -10,9 +10,9 @@ const SportTrade = () => {
   const containerRef = useRef();
   const location = useLocation();
   const { symbol, coinEndUrl } = location?.state || {};
-  
-  console.log(symbol===undefined,"locationlocation");
-  
+
+  console.log(symbol === undefined, "locationlocation");
+
 
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const SportTrade = () => {
       new window.TradingView.widget({
         width: "100%",
         height: 500,
-        symbol: `BINANCE:${symbol===undefined ?  "XTZUSDT" : symbol}`,
+        symbol: `BINANCE:${symbol === undefined ? "XTZUSDT" : symbol}`,
         interval: "D",
         timezone: "Etc/UTC",
         theme: "light",
@@ -82,24 +82,24 @@ const SportTrade = () => {
                 <CustomInput
                   placeholder="Enter"
                   label={"Quantity :"}
-                  endIcons={<CgArrowsScrollV/>}
+                  endIcons={<CgArrowsScrollV />}
                 />
                 <CustomInput
                   placeholder="Enter"
-                  endIcons={<CgArrowsScrollV/>}
+                  endIcons={<CgArrowsScrollV />}
                   label={"Bid Price :"}
                 />
                 <CustomInput
                   placeholder="Enter"
-                  endIcons={<CgArrowsScrollV/>}
+                  endIcons={<CgArrowsScrollV />}
                   label={"Total :"}
                 />
 
-              <div className="flex border-b-2 border-gray-300 pb-2 flex-row items-center justify-between">
-                <span className="text-sm text-gray-500">Available Balance:</span>
-                <span className="text-sm text-black font-semibold">0.23427 USDT</span>
-              </div>
-              <CustomButton title="Buy Ethereum" className={"!bg-green-500 !mt-1"} />
+                <div className="flex border-b-2 border-gray-300 pb-2 flex-row items-center justify-between">
+                  <span className="text-sm text-gray-500">Available Balance:</span>
+                  <span className="text-sm text-black font-semibold">0.23427 USDT</span>
+                </div>
+                <CustomButton title="Buy Ethereum" className={"!bg-green-500 !mt-1"} />
               </div>
             </div>
             <div className="">
@@ -117,23 +117,23 @@ const SportTrade = () => {
                 <CustomInput
                   placeholder="Enter"
                   label={"Quantity :"}
-                  endIcons={<CgArrowsScrollV/>}
+                  endIcons={<CgArrowsScrollV />}
                 />
                 <CustomInput
                   placeholder="Enter"
                   label={"Bid Price :"}
-                  endIcons={<CgArrowsScrollV/>}
+                  endIcons={<CgArrowsScrollV />}
                 />
                 <CustomInput
                   placeholder="Enter"
                   label={"Total :"}
-                  endIcons={<CgArrowsScrollV/>}
+                  endIcons={<CgArrowsScrollV />}
                 />
-<div className="flex border-b-2 border-gray-300 pb-2 flex-row items-center justify-between">
-                <span className="text-sm text-gray-500">Available Balance:</span>
-                <span className="text-sm text-black font-semibold">0.23427 USDT</span>
-              </div>
-              <CustomButton title="Buy Ethereum" className={"!bg-red-500 !mt-1"} />
+                <div className="flex border-b-2 border-gray-300 pb-2 flex-row items-center justify-between">
+                  <span className="text-sm text-gray-500">Available Balance:</span>
+                  <span className="text-sm text-black font-semibold">0.23427 USDT</span>
+                </div>
+                <CustomButton title="Buy Ethereum" className={"!bg-red-500 !mt-1"} />
               </div>
             </div>
 

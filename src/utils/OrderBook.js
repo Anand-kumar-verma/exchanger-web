@@ -6,7 +6,9 @@ const OrderBook = () => {
     const { symbol } = location?.state || {};
     const [bids, setBids] = useState([]);
     const [asks, setAsks] = useState([]);
-    const btcCoins = symbol === undefined ? "btcusdt" : symbol
+    const btcCoins = useMemo(() => {
+        return symbol === undefined ? "btcusdt" : symbol;
+      }, [symbol]);
     const socket = useMemo(() => { return new WebSocket(`wss://stream.binance.com:9443/ws/${btcCoins.toLowerCase()}@depth5`) }, []
     )
     useEffect(() => {
