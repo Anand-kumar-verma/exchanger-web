@@ -6,12 +6,12 @@ const AdminLayout = ({ isHeader, navLink, component }) => {
 
   return (
     <div className='flex flex-row w-full  '>
-      <div className='w-60'>
+   
         <SidebarTabs />
-      </div>
+      
       <div className='flex  w-full flex-col'>
       
-          <Header />
+      <Header />
        
         <div className='px-2 mt-2'>
           {component}

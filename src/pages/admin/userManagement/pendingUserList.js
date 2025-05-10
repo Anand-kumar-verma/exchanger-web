@@ -32,9 +32,10 @@ function PendingUserList() {
   return (
     <div>
       <CustomTable isFilter headers={headers}>
-        {
+     
+          {
           [1, 2, 3, 4, 5, 6]?.map((row, index) =>
-            <TableRow component="div" style={{margin:"10px !important"}} className='!bg-[#EBE9FD] !border-l-2 !relative !mt-5 !border-gray-300 !p-5'>
+            <TableRow  className='!bg-[#EBE9FD] !border-l-2 !mb-2 !relative  !border-gray-300'>
               <TableCell>Frozen yoghurt</TableCell>
               <TableCell align="left">159</TableCell>
               <TableCell align="left">159</TableCell>
