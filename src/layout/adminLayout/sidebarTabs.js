@@ -1,66 +1,24 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { MdMenu } from 'react-icons/md';
 import { List, ListItemButton, Collapse } from '@mui/material';
 import {
   FaCircle,
-  FaUserAlt,
-  FaUsersCog,
-  FaWallet,
-  FaLock,
 } from 'react-icons/fa';
 import { HiMiniArrowTrendingDown } from 'react-icons/hi2';
 import { HiArrowTrendingUp } from 'react-icons/hi2';
+import { sidebarList } from '../../utils/MockData';
 
-export const sidebarList = [
-  {
-    id: 1,
-    route: '/admin/dashboard',
-    icons: <FaUserAlt />,
-    title: 'Dashboard',
-  },
-  {
-    id: 2,
-    icons: <FaUsersCog className="text-yellow-300" />,
-    title: 'Users Manager',
-    route: '/admin/pending-user-list',
-    children: [
-      {
-        id: 1,
-        route: '/admin/pending-user-list',
-        title: 'Pending User List',
-      },
-      {
-        id: 2,
-        route: '/admin/user-list',
-        title: 'Users List',
-      },
-      {
-        id: 3,
-        route: '/admin/kyc-list',
-        title: 'KYC List',
-      },
-      {
-        id: 5,
-        route: '/admin/block-user',
-        title: 'Block User',
-      },
-    ],
-  },
-];
+
 
 function SidebarTabs() {
   const navigate = useNavigate();
   const [openSections, setOpenSections] = useState({});
   const [currentIndex, setCurrentIndex] = useState(1);
   const location = window.location.pathname;
-
   const toggleSection = (title) => {
     setOpenSections((prev) => ({ ...prev, [title]: !prev[title] }));
   };
-
-
-
   return (
     <div className="flex flex-col bg-blue100 z-40 w-56">
       <div className="flex relative items-center border-b border-white justify-center h-12">
@@ -81,13 +39,16 @@ function SidebarTabs() {
               <ListItemButton
                 className={`hover:bg-blue-700   !flex !justify-between !transition-all !duration-300 !ease-in-out  !flex-row !px-2 ${item.id === currentIndex ? "!text-blue100 !bg-white  !rounded-l-full !py-2 !ml-2" : "!py-1 "}`}
                 onClick={() => {
-                  if (item.children){ 
+                  if (item.children) {
                     toggleSection(item.title)
-                    setCurrentIndex(item.id)}
-                  else  {
-                    return setCurrentIndex(item.id)
-                  } 
-                  
+                    setCurrentIndex(item.id)
+                    navigate(item.route)
+                  }
+                  else {
+                    navigate(item.route)
+                    setCurrentIndex(item.id)
+                  }
+
 
                 }}
               >
@@ -119,7 +80,7 @@ function SidebarTabs() {
                       >
                         <div className="relative">
                           <FaCircle
-                            className={`text-[8px] ${location === child.route ? 'text-blue-900' : 'text-white'
+                            className={`text-[8px] ${location === child.route ? 'text-white' : 'text-white'
                               }`}
                           />
                           {cIdx < item.children.length - 1 && (
@@ -128,7 +89,7 @@ function SidebarTabs() {
                         </div>
                         <div
 
-                          className={`text-sm ${location === child.route ? "bg-white text-blue100" : "text-white"}  h-full font-semibold !flex w-full rounded-l-full pl-2 !items-center`}
+                          className={`text-[12px] ${location === child.route ? "bg-white text-blue100" : "text-white"}  h-full font-semibold !flex w-full rounded-l-full pl-2 !items-center`}
                         >
                           {child.title}
                         </div>

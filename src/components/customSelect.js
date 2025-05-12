@@ -1,9 +1,9 @@
-import React, { useState } from "react";
 import {
   FormControl,
   FormHelperText,
-  InputLabel,
+  InputAdornment,
   MenuItem,
+  OutlinedInput,
   Select,
   Skeleton,
 } from "@mui/material";
@@ -26,58 +26,71 @@ const CustomSelect = ({
   defaultValue = "",
   multiple = false,
   options,
-  size = "large",
+  size = "small",
   label = "",
   color = "secondary",
+  rightIcons = null,
   ...rest
 }) => {
-  // const [isFocused, setIsFocused] = useState(false);
   const selectedValue = formik?.values[id] || value || "";
   const handleChange = formik?.handleChange || onChange;
-
   return (
-    <FormControl>
-      <InputLabel className="!bg-white" size={size} color={color} id={id}>
+    <FormControl className="!w-full">
+      {label && <div
+        className="text-gray-400 text-sm font-semibold mb-1"
+      >
         {label}
-      </InputLabel>
+      </div>}
       <Select
-        labelId={id}
         displayEmpty
         color={color}
-        // onFocus={() => setIsFocused(true)}
         value={selectedValue}
         onChange={handleChange}
         id={id}
+        input={
+          rightIcons && <OutlinedInput
+            startAdornment={
+              <InputAdornment position="start" className="!bg-gray-100 border-r border-gray-300  !px-2 !py-5">
+                {rightIcons}
+              </InputAdornment>
+            }
+          />
+        }
         size={size}
-        label={label}
         error={formik?.errors[id] && formik?.touched[id]}
         onBlur={(event) => {
           formik?.handleBlur(event);
-          // setIsFocused(false);
         }}
         name={id}
-        sx={{ minWidth: "240px" }}
+        sx={{
+          minWidth: '350px',
+          width: '100%',
+          maxWidth: '100%',
+          marginTop: 0
+
+        }}
+
         renderValue={
           selectedValue !== ""
             ? undefined
             : () => <Placeholder>{placeholder}</Placeholder>
         }
-        className={classNames("", className)}
+        className={classNames("!m-0 !overflow-hidden !px-0 placeholder:!text-gray-400 !py-0", className)}
         {...rest}
       >
         {isLoading
           ? Array.from({ length: 5 }).map((_, index) => (
-              <MenuItem key={index} disabled>
-                <Skeleton style={{ width: "100%" }} />
-              </MenuItem>
-            ))
+            <MenuItem key={index} disabled>
+              <Skeleton style={{ width: "100%" }} />
+            </MenuItem>
+          ))
           : options
-          ? options.map((select) => (
+            ? options.map((select) => (
               <MenuItem key={select?.value} value={select?.value}>
                 {select?.label}
               </MenuItem>
             ))
-          : children}
+            : children}
       </Select>
       {formik?.errors && (
         <FormHelperText sx={{ color: "red" }}>

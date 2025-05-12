@@ -22,7 +22,9 @@ const CustomInput = ({
   onFocus,
   onBlur,
   color = "primary",
-  endIcons=<InputAdornment position="start">kg</InputAdornment>
+  endIcons = null,
+  startIcons = null,
+  sx={},
 }) => {
   return (
     <div className="flex flex-col justify-center">
@@ -35,24 +37,32 @@ const CustomInput = ({
         disabled={disabled}
         hidden={hidden}
         size="small"
-        InputProps={InputProps}
         variant={variant}
         value={value}
         onFocus={onFocus}
         defaultValue={defaultValue}
         multiline={multiline}
+        sx={sx}
+    
         rows={rows}
         error={formik?.errors?.[id] && formik?.touched?.[id] ? true : false}
         onBlur={onBlur || formik?.handleBlur}
         onChange={onChange}
         placeholder={placeholder}
         className={classNames(
-          "!rounded !outline-none placeholder:!text-gray-100 !capitalize !backdrop-blur-mk !bg-white !bg-opacity-20 !border-opacity-30 !border !border-white",
+          "!rounded !outline-none placeholder:!text-gray-100 overflow-hidden   !capitalize !backdrop-blur-mk h-full w-full !bg-white !bg-opacity-20 !border-opacity-30 !border !border-white",
           className
         )}
         slotProps={{
-          input:{
-            endAdornment:endIcons
+          input: {
+            endAdornment: endIcons,
+            startAdornment: startIcons && (
+              <div
+                className=" border-r border-gray-300 bg-gray-100 !mx-0 w-12  flex items-center justify-center !h-full"
+              >
+                {startIcons}
+              </div>
+            )
           }
         }}
       />

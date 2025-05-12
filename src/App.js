@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import loaderGif from "./assets/images/loader.gif"
 import AdminLayout from './layout/adminLayout';
 import { adminRoutes } from './routes/adminRoutes';
+import NotFound from './utils/NotFound';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -31,7 +32,9 @@ function App() {
   }
   return (
     <BrowserRouter>
+
       <Routes>
+        <Route path="*" element={<NotFound />} />
         {userRoutes.map((route) => {
           return (
             <Route
@@ -68,7 +71,7 @@ function App() {
         })}
 
 
-{adminRoutes.map((route) => {
+        {adminRoutes.map((route) => {
           return (
             <Route
               key={route.id}
@@ -86,7 +89,7 @@ function App() {
           );
         })}
 
-        
+
       </Routes>
     </BrowserRouter>
   );

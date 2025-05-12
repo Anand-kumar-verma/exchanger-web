@@ -3,7 +3,7 @@ import { CustomTable } from '../../../components/customTable'
 import {  TableCell, TableRow } from '@mui/material'
 import { Button } from '../../../components/button'
 
-function PendingUserList() {
+function AccountCloseList() {
   const headers = [
     {
       id: 0,
@@ -54,4 +54,4 @@ function PendingUserList() {
   )
 }
 
-export default PendingUserList
+export default AccountCloseList

@@ -29,13 +29,16 @@ const buttonVariants = cva(
         link: "text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50",
         success:
           "bg-green-500 text-neutral-50 shadow hover:bg-green-600   dark:bg-neutral-50 dark:text-primary dark:hover:bg-neutral-50/90",
+          submit:"bg-gradient-to-b from-indigo-400 to-indigo-800 text-white font-semibold px-4 py-1 rounded shadow hover:brightness-110 transition",
+           close:"bg-gradient-to-b from-red-600 to-red-300 text-white font-semibold px-4 py-1 rounded shadow hover:brightness-110 transition",
       },
       size: {
         default: "h-6 px-2 py-2",
-        sm: "h-8 rounded-md px-3 text-xs",
+        sm: "h-8 px-3",
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
       },
+      
     },
     defaultVariants: {
       variant: "default",
