@@ -3,24 +3,10 @@ import { FaBell } from "react-icons/fa";
 import { FaUserNurse } from "react-icons/fa6";
 import Skeleton from '@mui/material/Skeleton';
 import { FaWallet } from 'react-icons/fa';
-const stepsss = [
-  'Pending Users List',
-  'Users List',
-  'KYC List',
-  'Blocked Users',
-  'Account Close List',
-  'Secret Pin List',
-  'Upper Bank List'
-];
-
-
 const SkeletonCard = () => {
   return (
     <div className="flex items-center gap-4 px-4 py-2">
-      {/* Avatar Skeleton */}
       <Skeleton variant="circular" width={36} height={36} />
-
-      {/* Text Skeletons */}
       <div className="flex flex-col space-y-2">
         <Skeleton variant="rectangular" color='black' width={60} height={8} />
         <Skeleton variant="rectangular" width={80} height={8} />
@@ -28,8 +14,11 @@ const SkeletonCard = () => {
     </div>
   );
 };
-function Header() {
-  const activeStep = 3;
+function Header({
+  breadcrums = {},
+  updateInnerTab = () => null
+}) {
+  console.log(breadcrums, "breadcrums");
   return (
     <div className='flex flex-col gap-2'>
       <div className='bg-gradient-to-r flex items-center justify-between from-blue-500 to-blue100 h-12 w-full'>
@@ -60,33 +49,31 @@ function Header() {
         </div>
       </div>
       <button className="flex items-center mx-2 w-fit gap-2 px-3 py-2 bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-md shadow hover:brightness-110 transition-all">
-
         <FaWallet className="text-secondary text-lg" />
-
-        <span className="font-medium text-sm">Debit Wallet</span>
+        <span className="font-medium text-sm">{breadcrums?.title}</span>
       </button>
       <div className="flex mx-2 w-full overflow-x-auto">
-        {stepsss.map((step, index) => {
-          const isLast = index === stepsss.length;
-          const isActive = index === activeStep;
-
+        {breadcrums?.children !== undefined && breadcrums?.children.map((step, index) => {
+          const isLast = index === breadcrums?.children.length;
+          const isActive = step?.isActive;
           return (
             <div
               key={index}
-              className={`relative text-white px-4 py-1.5 text-xs font-semibold flex items-center ${isActive ? 'bg-gradient-to-r from-blue-900 to-blue-800' : 'bg-gradient-to-r from-blue-700 to-blue-500'
+              className={`relative text-white cursor-pointer px-4 py-1.5 text-xs font-semibold flex items-center ${isActive ? 'bg-gradient-to-r from-blue-900 to-blue-800' : 'bg-gradient-to-r from-blue-700 to-blue-500'
                 } ${!isLast && 'mr-1'} `}
               style={{
                 clipPath: isLast
                   ? 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
                   : 'polygon(0 0, 92% 0, 100% 50%, 92% 100%, 0 100%)',
                 padding: '0.5rem 1rem',
-                marginRight: isLast ? '0' : '-20px', // overlap with next
-                zIndex: stepsss.length - index, // keep correct stacking
+                marginRight: isLast ? '0' : '-20px',
+                zIndex: breadcrums?.children.length - index,
                 minWidth: '155px',
                 justifyContent: 'center'
               }}
+              onClick={() => updateInnerTab(step)}
             >
-              {step}
+              {step?.title}
             </div>
           );
         })}

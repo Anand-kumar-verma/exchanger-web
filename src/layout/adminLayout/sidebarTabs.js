@@ -4,21 +4,37 @@ import { MdMenu } from 'react-icons/md';
 import { List, ListItemButton, Collapse } from '@mui/material';
 import {
   FaCircle,
+  FaUsers,
 } from 'react-icons/fa';
 import { HiMiniArrowTrendingDown } from 'react-icons/hi2';
 import { HiArrowTrendingUp } from 'react-icons/hi2';
-import { sidebarList } from '../../utils/MockData';
+import { useDispatch, useSelector } from 'react-redux';
+import { currentSidebar } from '../../store/slice/adminSidebarSlice';
 
-
-
-function SidebarTabs() {
+function SidebarTabs({
+  sidebarList = [],
+  updateInnerTab = () => null
+}) {
   const navigate = useNavigate();
   const [openSections, setOpenSections] = useState({});
   const [currentIndex, setCurrentIndex] = useState(1);
-  const location = window.location.pathname;
+  const dispatch = useDispatch()
   const toggleSection = (title) => {
     setOpenSections((prev) => ({ ...prev, [title]: !prev[title] }));
   };
+  const changeRoute = (item) => {
+    dispatch(currentSidebar(item?.route));
+    if (item?.children) {
+      toggleSection(item?.title)
+      setCurrentIndex(item?.id)
+      navigate(item?.route)
+    }
+    else {
+      navigate(item?.route)
+      setCurrentIndex(item?.id)
+    }
+  }
+
   return (
     <div className="flex flex-col bg-blue100 z-40 w-56">
       <div className="flex relative items-center border-b border-white justify-center h-12">
@@ -39,23 +55,16 @@ function SidebarTabs() {
               <ListItemButton
                 className={`hover:bg-blue-700   !flex !justify-between !transition-all !duration-300 !ease-in-out  !flex-row !px-2 ${item.id === currentIndex ? "!text-blue100 !bg-white  !rounded-l-full !py-2 !ml-2" : "!py-1 "}`}
                 onClick={() => {
-                  if (item.children) {
-                    toggleSection(item.title)
-                    setCurrentIndex(item.id)
-                    navigate(item.route)
-                  }
-                  else {
-                    navigate(item.route)
-                    setCurrentIndex(item.id)
-                  }
+                  changeRoute(item)
+
 
 
                 }}
               >
                 <div className="flex flex-row items-center gap-2">
-                  <div className={item.id === currentIndex ? '' : 'border-l-2 border-gray-500 h-8'}></div>
-                  <div>{item.icons}</div>
-                  <span className="text-sm">{item.title}</span>
+                  <div className={item?.id === currentIndex ? '' : 'border-l-2 border-gray-500 h-8'}></div>
+                  {item?.icons && <div><FaUsers /></div>}
+                  <span className="text-sm">{item?.title}</span>
                 </div>
                 {item.children && (
                   openSections[item.title] ? (
@@ -72,15 +81,17 @@ function SidebarTabs() {
                     {item.children.map((child, cIdx) => (
                       <ListItemButton
                         key={cIdx}
-                        onClick={() => navigate(child.route)}
-                        className={`!ml-6 !px-0 !h-8 !mt-2 !py-0 rounded-r-full ${location === child.route
+                        onClick={() =>
+                          updateInnerTab(child)
+                        }
+                        className={`!ml-6 !px-0 !h-8 !mt-2 !py-0 rounded-r-full ${child?.isActive
                           ? ' text- font-semibold'
                           : 'hover:text-white'
                           }`}
                       >
                         <div className="relative">
                           <FaCircle
-                            className={`text-[8px] ${location === child.route ? 'text-white' : 'text-white'
+                            className={`text-[8px] ${child?.isActive ? 'text-white' : 'text-white'
                               }`}
                           />
                           {cIdx < item.children.length - 1 && (
@@ -89,7 +100,7 @@ function SidebarTabs() {
                         </div>
                         <div
 
-                          className={`text-[12px] ${location === child.route ? "bg-white text-blue100" : "text-white"}  h-full font-semibold !flex w-full rounded-l-full pl-2 !items-center`}
+                          className={`text-[12px] ${child?.isActive ? "bg-white text-blue100" : "text-white"}  h-full font-semibold !flex w-full rounded-l-full pl-2 !items-center`}
                         >
                           {child.title}
                         </div>
