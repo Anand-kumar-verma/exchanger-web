@@ -1,11 +1,9 @@
-import { RiHandCoinFill } from 'react-icons/ri'
+import { FaEye } from 'react-icons/fa';
 import { Button } from '../../../components/button'
 import { CustomTable } from '../../../components/customTable'
 import { TableCell, TableRow } from '@mui/material'
 import { FiEdit } from "react-icons/fi";
-import { GiReceiveMoney } from "react-icons/gi";
-import { MdOutlineSettingsSuggest } from "react-icons/md";
-function EmployeeList() {
+function Enquiry() {
     const headers = [
         {
             id: 0,
@@ -13,49 +11,35 @@ function EmployeeList() {
         },
         {
             id: 2,
-            label: "Enrol. Id"
+            label: "Name"
         },
         {
             id: 3,
-            label: "Name"
+            label: "Date"
         },
 
         {
             id: 4,
-            label: "Email"
+            label: "E-mail"
         },
         {
             id: 5,
-            label: "Contact"
+            label: "Mobile"
         },
 
         {
             id: 6,
-            label: "City"
+            label: "Skype ID"
         },
         {
             id: 7,
-            label: "District"
+            label: "Organization"
         },
         {
             id: 8,
-            label: "R/W No."
-        },
-        {
-            id: 9,
-            label: "Balance"
-        },
-
-        {
-            id: 10,
-            label: "Refno"
-        },
-        {
-            id: 11,
-            label: "Status"
+            label: "Message"
         },
         
-
     ]
     return (
         <div>
@@ -65,26 +49,24 @@ function EmployeeList() {
                     [1, 2, 3, 4, 5, 6]?.map((row, index) =>
                         <TableRow className='!bg-[#EBE9FD] !border-l-2 !mb-2 !relative  !border-gray-300'>
                             <TableCell>{index + 1}</TableCell>
-                            <TableCell>ram</TableCell>
-
+                             <TableCell>ram</TableCell>
+                           
                             <TableCell>ram@gmail.com</TableCell>
-                            <TableCell align="left">123</TableCell>
-
+                             <TableCell align="left">123</TableCell>
+                           
 
 
                             <TableCell align="left">23</TableCell>
                             <TableCell align="left">2342 </TableCell>
                             <TableCell align="left">Hello sir</TableCell>
-                            <TableCell align="left">Hello sir</TableCell>
-                            <TableCell align="left">Hello sir</TableCell>
-                            <TableCell align="left">
-                                <Button variant="blue">Pending</Button>
-                            </TableCell>
                            
                             <TableCell align="left">
-                                active
+                                <Button variant="blue"><FaEye  /></Button>
                             </TableCell>
-                            
+
+
+
+
                         </TableRow>
                     )
                 }
@@ -94,4 +76,4 @@ function EmployeeList() {
     )
 }
 
-export default EmployeeList
+export default Enquiry

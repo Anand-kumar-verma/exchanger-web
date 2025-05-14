@@ -288,6 +288,64 @@ export const sidebarList = [
         title: 'Role List',
       },
     ]
+  },
+  {
+    id: 9,
+    icons: <FaUsers  className="text-yellow-300" />,
+    title: 'CMS Master',
+    route: '/admin/system-settings',
+    children: [
+      {
+        id: 1,
+        route: '/admin/system-settings',
+        title: 'System Settings',
+      },
+      {
+        id: 2,
+        route: '/admin/trade-bot-settings',
+        title: 'Trade Bot Settings',
+      },
+      {
+        id: 3,
+        route: '/admin/functional-settings',
+        title: 'Functional Settings',
+      },
+    ]
+  },
+
+   {
+    id: 10,
+    icons: <FaUsers  className="text-yellow-300" />,
+    title: 'System Settings',
+    route: '/admin/trade-bot-settings',
+    children: [
+      {
+        id: 1,
+        route: '/admin/trade-bot-settings',
+        title: 'Trade Bot Settings',
+      },
+      {
+        id: 2,
+        route: '/admin/functional-settings',
+        title: 'Functional Settings',
+      },
+      
+    ]
+  },
+  {
+    id: 11,
+    icons: <FaUsers  className="text-yellow-300" />,
+    title: 'Lead Management',
+    route: '/admin/enquiry',
+    children: [
+      {
+        id: 1,
+        route: '/admin/enquiry',
+        title: 'Enquiry',
+      },
+      
+      
+    ]
   }
 
 ];

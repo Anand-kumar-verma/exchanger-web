@@ -10,6 +10,9 @@ import loaderGif from "./assets/images/loader.gif"
 import AdminLayout from './layout/adminLayout';
 import { adminRoutes } from './routes/adminRoutes';
 import NotFound from './utils/NotFound';
+import { Provider } from "react-redux";
+import store, { persistor } from "./store/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -31,67 +34,70 @@ function App() {
     );
   }
   return (
-    <BrowserRouter>
-
-      <Routes>
-        <Route path="*" element={<NotFound />} />
-        {userRoutes.map((route) => {
-          return (
-            <Route
-              key={route.id}
-              path={route.path}
-              element={
-                <UsersLayout
-                  id={route.id}
-                  navLink={route.path}
-                  navItem={route.navItem}
-                  isHeader={route.isHeader}
-                  component={route.component}
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="*" element={<NotFound />} />
+            {userRoutes.map((route) => {
+              return (
+                <Route
+                  key={route.id}
+                  path={route.path}
+                  element={
+                    <UsersLayout
+                      id={route.id}
+                      navLink={route.path}
+                      navItem={route.navItem}
+                      isHeader={route.isHeader}
+                      component={route.component}
+                    />
+                  }
                 />
-              }
-            />
-          );
-        })}
-        {walletRoutes.map((route) => {
-          return (
-            <Route
-              key={route.id}
-              path={route.path}
-              element={
-                <WalletLayout
-                  id={route.id}
-                  navLink={route.path}
-                  navItem={route.navItem}
-                  isHeader={route.isHeader}
-                  component={route.component}
+              );
+            })}
+            {walletRoutes.map((route) => {
+              return (
+                <Route
+                  key={route.id}
+                  path={route.path}
+                  element={
+                    <WalletLayout
+                      id={route.id}
+                      navLink={route.path}
+                      navItem={route.navItem}
+                      isHeader={route.isHeader}
+                      component={route.component}
+                    />
+                  }
                 />
-              }
-            />
-          );
-        })}
+              );
+            })}
 
 
-        {adminRoutes.map((route) => {
-          return (
-            <Route
-              key={route.id}
-              path={`/admin${route.path}`}
-              element={
-                <AdminLayout
-                  id={route.id}
-                  navLink={route.path}
-                  navItem={route.navItem}
-                  isHeader={route.isHeader}
-                  component={route.component}
+            {adminRoutes.map((route) => {
+              return (
+                <Route
+                  key={route.id}
+                  path={`/admin${route.path}`}
+                  element={
+                    <AdminLayout
+                      id={route.id}
+                      navLink={route.path}
+                      navItem={route.navItem}
+                      isHeader={route.isHeader}
+                      component={route.component}
+                    />
+                  }
                 />
-              }
-            />
-          );
-        })}
+              );
+            })}
 
 
-      </Routes>
-    </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
   );
 }
 

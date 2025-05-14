@@ -9,7 +9,8 @@ module.exports = {
         primary: "#4b5563", //gray 
         secondary: "#6BA539", //green
         // secondary: "#19B55A", //green
-        blue100:"#00008B"
+        blue100:"#00008B",
+        gray20:"#EBE9FD"
       },
       backgroundImage: {
         'custom-gradient': 'linear-gradient(to right, #6A5ACD, #483D8B, #00008B)',

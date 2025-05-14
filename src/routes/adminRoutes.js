@@ -1,4 +1,5 @@
 import AddNewEmployee from "../pages/admin/adminUsers/addNewEmployee";
+import AddRole from "../pages/admin/adminUsers/addRole";
 import EmployeeList from "../pages/admin/adminUsers/employeeList";
 import MyProfile from "../pages/admin/adminUsers/myProfile";
 import ActiveCoinList from "../pages/admin/coinManagement/activeCoinList";
@@ -17,6 +18,8 @@ import EmailAccounts from "../pages/admin/emailModule/EmailAccounts";
 import EmailTemplate from "../pages/admin/emailModule/emailTemplate";
 import ImageUpload from "../pages/admin/emailModule/imageUpload";
 import PromotionalEmail from "../pages/admin/emailModule/promotionalEmail";
+import Enquiry from "../pages/admin/leadManagement/enquiry";
+import TradeBotSettings from "../pages/admin/systemSetting/tradeBotSettings";
 import BuyCoin from "../pages/admin/tradeMaster/buyCoin";
 import BuyOrderClosedHistory from "../pages/admin/tradeMaster/buyOrderClosedHistory";
 import ClosedOrders from "../pages/admin/tradeMaster/closedOrders";
@@ -290,13 +293,36 @@ export const adminRoutes = [
         isHeader: false,
     },
      {
-        id:36,
+        id:37,
         path: "/employee-list",
         component: <EmployeeList />,
         navItem: "Employee List",
         isHeader: false,
     },
+    {
+        id:38,
+        path: "/add-role",
+        component: <AddRole />,
+        navItem: "Add Role",
+        isHeader: false,
+    },
+    {
+        id:39,
+        path: "/trade-bot-settings",
+        component: <TradeBotSettings />,
+        navItem: "Trade Bot Settings",
+        isHeader: false,
+    },
+     {
+        id:40,
+        path: "/enquiry",
+        component: <Enquiry />,
+        navItem: "Enquiry",
+        isHeader: false,
+    },
     
 ]
+
+
 
 
