@@ -4,8 +4,6 @@ import { TableCell, TableRow } from '@mui/material'
 import CustomSelect from '../../../components/customSelect';
 import ListIcon from '@mui/icons-material/List';
 import { useState } from 'react';
-import CustomInput from '../../../components/customInput';
-import { FaUser } from 'react-icons/fa';
 
 
 const sx = {
@@ -21,7 +19,7 @@ const options = [
   { value: "banana", label: "Banana" },
   { value: "cherry", label: "Cherry" },
 ];
-function PairMaster() {
+function CoinPairSetting() {
      const [fruit, setFruit] = useState("");
     
       const handleSelectChange = (event) => {
@@ -32,32 +30,18 @@ function PairMaster() {
             id: 0,
             label: "S. No."
         },
+       
         {
             id: 1,
-            label: "Purchase Type"
-        },
-        {
-            id: 2,
             label: "Coin Name"
         },
+      
         {
-            id: 3,
-            label: "Created By"
-        },
-
-        {
-            id: 4,
-            label: "Created Date"
-        },
-        {
-            id: 5,
+            id: 2,
             label: "Status"
         },
 
-        {
-            id: 6,
-            label: "Action"
-        },
+       
         
        
     ]
@@ -74,16 +58,7 @@ function PairMaster() {
                     rightIcons={<ListIcon className="text-blue100" size={25} />}
                     className='!placeholder-slate-400 !w-full'
                 />
-                <CustomInput
-                    placeholder="Email Id"
-                    sx={sx}
-                    startIcons={<FaUser className="text-blue100" size={20} />}
-                    className=''
-                />
-                <div className='flex flex-row gap-3'>
-                    <Button variant="submit" size="sm">Submit</Button>
-                    <Button variant="close" size="sm">Close</Button>
-                </div>
+               
             </div>
             </div>
             <CustomTable headers={headers}>
@@ -94,20 +69,12 @@ function PairMaster() {
                             <TableCell>{index + 1}</TableCell>
                             <TableCell>ram</TableCell>
 
-                            <TableCell>ram@gmail.com</TableCell>
-                            <TableCell align="left">123</TableCell>
-
-
-
-                            <TableCell align="left">23</TableCell>
+                            
                             <TableCell align="left">
                                 <Button variant="success">success</Button>
                             </TableCell>
 
-                            <TableCell align="left"><Button variant="outline">
-                                Deactivate</Button>
-
-                            </TableCell>
+                           
                           </TableRow>
                     )
                 }
@@ -118,4 +85,4 @@ function PairMaster() {
     )
 }
 
-export default PairMaster
+export default CoinPairSetting

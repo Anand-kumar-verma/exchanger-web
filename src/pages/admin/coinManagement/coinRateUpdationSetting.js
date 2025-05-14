@@ -10,10 +10,10 @@ import { FaUser } from 'react-icons/fa';
 
 const sx = {
   '& .MuiInputBase-input': {
-    paddingLeft: 1, // removes padding inside input
+    paddingLeft: 1, 
   },
   '& .MuiOutlinedInput-root': {
-    padding: 0, // removes padding inside outlined input wrapper
+    padding: 0, 
   },
 }
 const options = [
@@ -21,7 +21,7 @@ const options = [
   { value: "banana", label: "Banana" },
   { value: "cherry", label: "Cherry" },
 ];
-function PairMaster() {
+function CoinRateUpdationSetting() {
      const [fruit, setFruit] = useState("");
     
       const handleSelectChange = (event) => {
@@ -81,8 +81,8 @@ function PairMaster() {
                     className=''
                 />
                 <div className='flex flex-row gap-3'>
-                    <Button variant="submit" size="sm">Submit</Button>
-                    <Button variant="close" size="sm">Close</Button>
+                    <Button variant="submit" size="sm">Update</Button>
+                    <Button variant="close" size="sm">Clear</Button>
                 </div>
             </div>
             </div>
@@ -118,4 +118,4 @@ function PairMaster() {
     )
 }
 
-export default PairMaster
+export default CoinRateUpdationSetting

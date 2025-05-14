@@ -25,10 +25,11 @@ const CustomInput = ({
   endIcons = null,
   startIcons = null,
   sx={},
+  lableClassName=""
 }) => {
   return (
     <div className="flex flex-col justify-center">
-      {label && <p className="m-1 whitespace-nowrap font-semibold">{label}</p>}
+      {label && <p className={`whitespace-nowrap text-gray-500 font-normal text-sm ${lableClassName}`}>{label}</p>}
       <TextField
         color={color}
         id={id}

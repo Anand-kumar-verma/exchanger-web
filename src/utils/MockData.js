@@ -1,4 +1,4 @@
-import { FaUserAlt, FaUsersCog, FaWallet } from "react-icons/fa";
+import { FaUserAlt, FaUsers, FaUsersCog, FaWallet } from "react-icons/fa";
 
 export const sidebarList = [
   {
@@ -50,7 +50,7 @@ export const sidebarList = [
       },
     ],
   },
-   {
+  {
     id: 3,
     icons: <FaWallet className="text-yellow-300" />,
     title: 'Coin Wallet',
@@ -86,7 +86,7 @@ export const sidebarList = [
         route: "/admin/transfer-report",
         title: 'Transfer Report',
       },
-      
+
     ],
   },
 
@@ -126,12 +126,12 @@ export const sidebarList = [
         route: "/admin/sell-order-closed-history",
         title: 'Sell Order Closed History',
       },
-       {
+      {
         id: 7,
         route: "/admin/buy-order-closed-hostory",
         title: 'Buy Order Closed History',
       },
-      
+
     ],
   },
   {
@@ -152,7 +152,7 @@ export const sidebarList = [
       },
     ]
   },
-   {
+  {
     id: 6,
     icons: <FaWallet className="text-yellow-300" />,
     title: 'Coin Management',
@@ -185,12 +185,12 @@ export const sidebarList = [
       },
       {
         id: 6,
-        route: "/admin/coin-pair-settings",
+        route: "/admin/coin-pair-setting",
         title: 'Coin Pair Settings',
       },
-       {
+      {
         id: 7,
-        route: "/admin/coin-pair-settings-list",
+        route: "/admin/coin-pair-setting-list",
         title: 'COIN Pair Settings List',
       },
       {
@@ -200,12 +200,97 @@ export const sidebarList = [
       },
       {
         id: 9,
-        route: "/admin/coin-rate-updation-settings",
+        route: "/admin/coin-rate-updation-setting",
         title: 'Coin Rate Updation Settings',
       },
-      
+
+      {
+        id: 10,
+        route: "/admin/coin-sms",
+        title: ' Coin SMS',
+      },
+      {
+        id: 11,
+        route: "/admin/withdrawal-settings",
+        title: 'Withdrawal Settings',
+      },
+
     ],
   },
+
+  {
+    id: 7,
+    icons: <FaWallet className="text-yellow-300" />,
+    title: 'Email Module',
+    route: '/admin/promotional-email',
+    children: [
+      {
+        id: 1,
+        route: '/admin/promotional-email',
+        title: 'Promotional Email',
+      },
+      {
+        id: 2,
+        route: '/admin/email-template',
+        title: 'Email Template',
+      },
+      {
+        id: 3,
+        route: '/admin/image-upload',
+        title: 'Image Upload',
+      },
+      {
+        id: 4,
+        route: '/admin/email-accounts',
+        title: 'Email Accounts',
+      },
+      {
+        id: 5,
+        route: "/admin/email-bulk-upload",
+        title: 'Email Bulk Upload',
+      },
+    ]
+  },
+  {
+    id: 8,
+    icons: <FaUsers  className="text-yellow-300" />,
+    title: 'Admin Users',
+    route: '/admin/my-profile',
+    children: [
+      {
+        id: 1,
+        route: '/admin/my-profile',
+        title: 'My Profile',
+      },
+      {
+        id: 2,
+        route: '/admin/add-new-employee',
+        title: 'Add New Employee',
+      },
+      {
+        id: 3,
+        route: '/admin/employee-list',
+        title: 'Employee List',
+      },
+      {
+        id: 4,
+        route: '/admin/add-role',
+        title: 'Add Role',
+      },
+      {
+        id: 5,
+        route: "/admin/admin-login-log",
+        title: 'Admin Login Log',
+      },
+      {
+        id: 5,
+        route: "/admin/role-list",
+        title: 'Role List',
+      },
+    ]
+  }
+
 ];
 
- 
+
+

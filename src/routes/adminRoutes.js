@@ -1,11 +1,22 @@
+import AddNewEmployee from "../pages/admin/adminUsers/addNewEmployee";
+import EmployeeList from "../pages/admin/adminUsers/employeeList";
+import MyProfile from "../pages/admin/adminUsers/myProfile";
 import ActiveCoinList from "../pages/admin/coinManagement/activeCoinList";
 import AddCoin from "../pages/admin/coinManagement/addCoin";
 import CoinExpertReviews from "../pages/admin/coinManagement/coinExpertReviews";
 import CoinList from "../pages/admin/coinManagement/coinList";
+import CoinPairSetting from "../pages/admin/coinManagement/coinPairSetting";
+import CoinPairSettingList from "../pages/admin/coinManagement/coinPairSettingList";
+import CoinRateUpdationSetting from "../pages/admin/coinManagement/coinRateUpdationSetting";
 import PairMaster from "../pages/admin/coinManagement/pairMaster";
+import TradingCapping from "../pages/admin/coinManagement/tradingCapping";
 import Dashboard from "../pages/admin/dashboard";
 import AllConnectedAddress from "../pages/admin/deposits/allConnectedAddress";
 import DepositedReport from "../pages/admin/deposits/depositedReport";
+import EmailAccounts from "../pages/admin/emailModule/EmailAccounts";
+import EmailTemplate from "../pages/admin/emailModule/emailTemplate";
+import ImageUpload from "../pages/admin/emailModule/imageUpload";
+import PromotionalEmail from "../pages/admin/emailModule/promotionalEmail";
 import BuyCoin from "../pages/admin/tradeMaster/buyCoin";
 import BuyOrderClosedHistory from "../pages/admin/tradeMaster/buyOrderClosedHistory";
 import ClosedOrders from "../pages/admin/tradeMaster/closedOrders";
@@ -202,12 +213,90 @@ export const adminRoutes = [
         isHeader: false,
     },
     {
-        id:25,
+        id:26,
         path: "/pair-master",
         component: <PairMaster />,
         navItem: "Pair Master",
         isHeader: false,
     },
+    {
+        id:27,
+        path: "/coin-pair-setting",
+        component: <CoinPairSetting />,
+        navItem: "Coin Pair Setting",
+        isHeader: false,
+    },
+     {
+        id:28,
+        path: "/coin-pair-setting-list",
+        component: <CoinPairSettingList />,
+        navItem: "Coin Pair Setting List",
+        isHeader: false,
+    },
+     {
+        id:29,
+        path: "/trading-capping",
+        component: <TradingCapping />,
+        navItem: "Trading Capping",
+        isHeader: false,
+    },
+     {
+        id:30,
+        path: "/coin-rate-updation-setting",
+        component: <CoinRateUpdationSetting />,
+        navItem: "Coin Rate Updation Setting",
+        isHeader: false,
+    },
+     {
+        id:31,
+        path: "/promotional-email",
+        component: <PromotionalEmail />,
+        navItem: "Promotional Email",
+        isHeader: false,
+    },
+    {
+        id:32,
+        path: "/email-template",
+        component: <EmailTemplate />,
+        navItem: "Email Template",
+        isHeader: false,
+    },
+    {
+        id:33,
+        path: "/image-upload",
+        component: <ImageUpload />,
+        navItem: "Image Upload",
+        isHeader: false,
+    },
+     {
+        id:34,
+        path: "/email-accounts",
+        component: <EmailAccounts />,
+        navItem: "Email Accounts",
+        isHeader: false,
+    },
+    {
+        id:35,
+        path: "/my-profile",
+        component: <MyProfile />,
+        navItem: "My Profile",
+        isHeader: false,
+    },
+    {
+        id:36,
+        path: "/add-new-employee",
+        component: <AddNewEmployee />,
+        navItem: "Add New Employee",
+        isHeader: false,
+    },
+     {
+        id:36,
+        path: "/employee-list",
+        component: <EmployeeList />,
+        navItem: "Employee List",
+        isHeader: false,
+    },
+    
 ]
 
 

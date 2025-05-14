@@ -27,6 +27,7 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50",
         link: "text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50",
+        yellow100:"bg-yellow-300 text-black font-semibold px-4 py-2 rounded shadow hover:bg-yellow-400 transition",
         success:
           "bg-green-500 text-neutral-50 shadow hover:bg-green-600   dark:bg-neutral-50 dark:text-primary dark:hover:bg-neutral-50/90",
           submit:"bg-gradient-to-b from-indigo-400 to-indigo-800 text-white font-semibold px-4 py-1 rounded shadow hover:brightness-110 transition",
