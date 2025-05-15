@@ -5,7 +5,7 @@ import { currentSidebar } from '../../store/slice/adminSidebarSlice';
 import { useNavigate } from 'react-router';
 const AdminLayout = ({ isHeader, navLink, component }) => {
   const dispatch = useDispatch()
-  const navigate=useNavigate()
+  const navigate = useNavigate()
   const { adminSidebar } = useSelector((state) => state?.adminSidebarList)
   const activeSidebar = adminSidebar.filter(item => item.isActive);
   const updateInnerTab = (child) => {
@@ -15,9 +15,9 @@ const AdminLayout = ({ isHeader, navLink, component }) => {
   return (
     <div className='flex flex-row w-full  '>
 
-      <SidebarTabs updateInnerTab={updateInnerTab} sidebarList={adminSidebar} />
+      <SidebarTabs breadcrums={activeSidebar?.[0]} updateInnerTab={updateInnerTab} sidebarList={adminSidebar} />
 
-      <div className='flex  w-full flex-col'>
+      <div className='flex  w-full overflow-auto mb-12  ml-[220px] flex-col'>
 
         <Header breadcrums={activeSidebar?.[0]} updateInnerTab={updateInnerTab} />
 

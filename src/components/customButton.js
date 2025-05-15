@@ -1,11 +1,17 @@
 import { Button } from "@mui/material";
-import React from "react";
 
-export default function CustomButton({ title = "", type = "button" }) {
+export default function CustomButton({
+  title = "",
+  type = "button",
+  variant = "contained",
+  size = "small"
+ }) {
   return (
     <Button
       type={type}
-      className={`!bg-green-400 !text-white !h-10 !w-full !rounded-full !font-medium !text-sm`}
+      variant={variant}
+      size={size}
+      className={`!bg-secondary !text-white !h-10 !w-full !rounded !font-medium !text-sm`}
     >
       {title}
     </Button>

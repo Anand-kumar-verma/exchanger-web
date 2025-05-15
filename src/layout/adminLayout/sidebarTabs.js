@@ -11,13 +11,15 @@ import { HiArrowTrendingUp } from 'react-icons/hi2';
 import { useDispatch, useSelector } from 'react-redux';
 import { currentSidebar } from '../../store/slice/adminSidebarSlice';
 
+
 function SidebarTabs({
   sidebarList = [],
-  updateInnerTab = () => null
+  updateInnerTab = () => null,
+  breadcrums={}
 }) {
   const navigate = useNavigate();
   const [openSections, setOpenSections] = useState({});
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(breadcrums?.id);
   const dispatch = useDispatch()
   const toggleSection = (title) => {
     setOpenSections((prev) => ({ ...prev, [title]: !prev[title] }));
@@ -36,7 +38,7 @@ function SidebarTabs({
   }
 
   return (
-    <div className="flex flex-col bg-blue100 z-40 w-56">
+    <div className="flex fixed flex-col bg-blue100 z-40 min-w-[220px]">
       <div className="flex relative items-center border-b border-white justify-center h-12">
         <img
           onClick={() => navigate('/admin/dashboard')}
@@ -48,7 +50,7 @@ function SidebarTabs({
           <MdMenu className="text-white -rotate-45 cursor-pointer" />
         </div>
       </div>
-      <div className="h-screen overflow-y-auto">
+      <div className="overflow-y-auto" style={{ height: 'calc(100vh - 3rem)' }}>
         <List className="pt-2 text-white">
           {sidebarList.map((item, idx) => (
             <div key={idx}>

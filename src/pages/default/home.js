@@ -302,7 +302,9 @@ const Home = () => {
               Buy, Sell & Trade Bitcoin, Ethereum, Ripple, Litecoin and more cryptocurrencies in India. Start trading now!
             </p>
 
-            <CustomButton title='Deposit Crypto' className={"!mt-2"} size="large" />
+            <div className='!w-44'>
+              <CustomButton title='Deposit Crypto' className={"!mt-2"} size="small" />
+            </div>
           </div>
           <div className="text-secondary text-[200px] md:text-[250px] lg:text-[300px]">
             <FaBitcoin className="mx-auto" />
