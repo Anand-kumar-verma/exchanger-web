@@ -8,7 +8,7 @@ import {
 } from 'react-icons/fa';
 import { HiMiniArrowTrendingDown } from 'react-icons/hi2';
 import { HiArrowTrendingUp } from 'react-icons/hi2';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { currentSidebar } from '../../store/slice/adminSidebarSlice';
 
 
@@ -38,7 +38,8 @@ function SidebarTabs({
   }
 
   return (
-    <div className="flex fixed flex-col bg-blue100 z-40 min-w-[220px]">
+    <div className='md:block hidden'>
+    <div className="flex fixed flex-col bg-blue100 z-40 w-0  md:min-w-[220px]">
       <div className="flex relative items-center border-b border-white justify-center h-12">
         <img
           onClick={() => navigate('/admin/dashboard')}
@@ -50,7 +51,7 @@ function SidebarTabs({
           <MdMenu className="text-white -rotate-45 cursor-pointer" />
         </div>
       </div>
-      <div className="overflow-y-auto" style={{ height: 'calc(100vh - 3rem)' }}>
+      <div className="overflow-y-auto h-[calc(100vh-3rem)]">
         <List className="pt-2 text-white">
           {sidebarList.map((item, idx) => (
             <div key={idx}>
@@ -115,6 +116,7 @@ function SidebarTabs({
           ))}
         </List>
       </div>
+    </div>
     </div>
   );
 }

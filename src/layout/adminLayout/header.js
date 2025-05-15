@@ -2,6 +2,8 @@ import { FaBell } from "react-icons/fa";
 import { FaUserNurse } from "react-icons/fa6";
 import Skeleton from '@mui/material/Skeleton';
 import { FaWallet } from 'react-icons/fa';
+import { MdMenu } from "react-icons/md";
+import { useNavigate } from "react-router";
 const SkeletonCard = () => {
   return (
     <div className="flex items-center gap-4 px-4 py-2">
@@ -17,10 +19,24 @@ function Header({
   breadcrums = {},
   updateInnerTab = () => null
 }) {
+  const navigate = useNavigate()
   return (
     <div className='flex flex-col gap-2'>
-      <div className="fixed z-30" style={{ width: 'calc(100% - 220px)' }}>
-        <div className='bg-gradient-to-r flex px-3 items-center justify-between from-blue-500 to-blue100 h-12 w-full'>
+      <div className="fixed z-30 w-full md:w-[calc(100% - 220px)]">
+        <div className='bg-gradient-to-r flex px-0 md:px-3 items-center justify-between from-blue-500 to-blue100 h-12 w-full'>
+          <div className="md:hidden block">
+            <div className="flex w-44 relative items-center bg-blue100  justify-center h-12">
+              <img
+                onClick={() => navigate('/admin/dashboard')}
+                src="https://bscscan.com/assets/bsc/images/svg/logos/logo-light.svg?v=25.4.3.0"
+                alt="logo"
+                className="h-8 w-full cursor-pointer"
+              />
+              <div className="h-8 w-8 bg-blue100 flex items-center justify-center absolute -right-4 rotate-45">
+                <MdMenu className="text-white -rotate-45 cursor-pointer" />
+              </div>
+            </div>
+          </div>
           <div>
             <div className=' md:block hidden lg:w-full  mx-auto'>
               <div className="md:grid grid-cols-3 gap-5  items-center   rounded-md">
