@@ -4,10 +4,12 @@ export default function CustomButton({
   title = "",
   type = "button",
   variant = "contained",
-  size = "small"
- }) {
+  size = "small",
+  onClick = () => null,
+}) {
   return (
     <Button
+      onClick={onClick}
       type={type}
       variant={variant}
       size={size}

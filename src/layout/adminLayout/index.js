@@ -19,7 +19,7 @@ const AdminLayout = ({ isHeader, navLink, component }) => {
 
       <div className='flex  w-full overflow-auto mb-12 ml-0 md:ml-[220px] flex-col'>
 
-        <Header breadcrums={activeSidebar?.[0]} updateInnerTab={updateInnerTab} />
+        <Header adminSidebar={adminSidebar} breadcrums={activeSidebar?.[0]} updateInnerTab={updateInnerTab} />
 
         <div className='px-2 mt-2'>
           {component}
