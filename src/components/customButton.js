@@ -14,7 +14,7 @@ export default function CustomButton({
       type={type}
       variant={variant}
       size={size}
-      className={`!bg-secondary !text-white !h-10  w-fit !rounded !font-medium !text-sm ${className}`}
+      className={`!bg-secondary text-white !h-10  w-fit !rounded !font-medium !text-sm ${className}`}
     >
       {title}
     </Button>
