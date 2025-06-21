@@ -62,7 +62,7 @@ const SportTrade = () => {
         </div>
       </div>
 
-      <div className="w-full col-span-6 mb-12 mx-auto">
+      <div className="w-full col-span-6 mt-1 mb-12 mx-auto">
         <div id="tradingview_widget" ref={containerRef} />
         <div className="p-3 border-r">
           <p className="text-gray-600 text-lg">Sports</p>
