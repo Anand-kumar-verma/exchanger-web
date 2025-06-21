@@ -6,6 +6,7 @@ export default function CustomButton({
   variant = "contained",
   size = "small",
   onClick = () => null,
+  className = "",
 }) {
   return (
     <Button
@@ -13,7 +14,7 @@ export default function CustomButton({
       type={type}
       variant={variant}
       size={size}
-      className={`!bg-secondary !text-white !h-10 !w-full !rounded !font-medium !text-sm`}
+      className={`!bg-secondary !text-white !h-10  w-fit !rounded !font-medium !text-sm ${className}`}
     >
       {title}
     </Button>

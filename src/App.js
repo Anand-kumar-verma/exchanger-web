@@ -21,7 +21,7 @@ function App() {
     // 3 seconds ka delay
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 3000);  
 
     return () => clearTimeout(timer);
   }, []);
