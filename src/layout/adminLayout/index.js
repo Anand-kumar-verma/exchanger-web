@@ -2,16 +2,24 @@ import SidebarTabs from './sidebarTabs';
 import Header from './header';
 import { useDispatch, useSelector } from 'react-redux';
 import { currentSidebar } from '../../store/slice/adminSidebarSlice';
-import { useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
+import { useEffect } from 'react';
 const AdminLayout = ({ isHeader, navLink, component }) => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const { pathname } = useLocation();
   const { adminSidebar } = useSelector((state) => state?.adminSidebarList)
   const activeSidebar = adminSidebar.filter(item => item.isActive);
   const updateInnerTab = (child) => {
     navigate(child.route)
     dispatch(currentSidebar(child?.route));
   }
+
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <div className='flex flex-row w-full  '>
 

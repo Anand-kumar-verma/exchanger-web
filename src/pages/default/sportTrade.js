@@ -41,7 +41,7 @@ const SportTrade = () => {
 
   return (
     <div className="grid grid-cols-10 min-h-screen">
-      <div className="col-span-2 relative  w-full">
+      <div className="lg:col-span-2 md:col-span-3 hidden md:block relative  w-full">
         <div className="relative z-10">
           <CoinData />
         </div>
@@ -62,7 +62,7 @@ const SportTrade = () => {
         </div>
       </div>
 
-      <div className="w-full col-span-6 mt-1 mb-12 mx-auto">
+      <div className="w-full lg:col-span-6 md:col-span-7 col-span-10 mt-0 md:mt-1 mb-12 mx-auto">
         <div id="tradingview_widget" ref={containerRef} />
         <div className="p-3 border-r">
           <p className="text-gray-600 text-lg">Sports</p>
@@ -140,7 +140,7 @@ const SportTrade = () => {
           </div>
         </div>
       </div>
-      <div className="col-span-2 bg-white"><OrderBook /></div>
+      <div className="col-span-2 hidden lg:block bg-white"><OrderBook /></div>
 
     </div>
   );

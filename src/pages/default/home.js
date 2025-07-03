@@ -599,7 +599,7 @@ const Home = () => {
 
         <div className='mt-20 px-8 w-full mx-auto md:px-16'>
           <h1 className='text-center text-xl md:text-4xl font-bold text-gray-900 '>Feel Supported All The Time</h1>
-          <CustomButton title='Deposit Now' size='large' className={"!mx-auto !font-semibold !mt-7 !flex hover:!text-black !items-center !justify-center"} />
+          <CustomButton onClick={()=>navigate('/asset-overview')} title='Deposit Now' size='large' className={"!mx-auto !font-semibold !mt-7 !flex hover:!text-gray-200 !items-center !justify-center"} />
         </div>
 
       </div>

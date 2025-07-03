@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from './header'
 import Footer from './footer'
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { SidebarMenu } from './sidebarMenu';
 import BottomTab from './bottomTab';
+import { useLocation } from 'react-router';
 const UsersLayout = ({ isHeader, navLink, component }) => {
-  
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <div className={isHeader ? "" : 'bg-gray-50'}>
       <div className="font-bold text-green-300 ">
@@ -41,11 +46,11 @@ const UsersLayout = ({ isHeader, navLink, component }) => {
             <div className='w-full'>{component}</div>
           </div>
         </div> :
-        <div className={navLink==="/sport-trade" ? "w-full":'w-full pt-5'}>{component}</div>
+        <div className={navLink === "/sport-trade" ? "w-full" : 'w-full pt-5'}>{component}</div>
       }
       <div className='sm:pb-0 pb-20 bg-white'>
         <Footer />
-        <BottomTab/>
+        <BottomTab />
       </div>
     </div>
   );

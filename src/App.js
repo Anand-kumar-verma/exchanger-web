@@ -13,6 +13,8 @@ import NotFound from './utils/NotFound';
 import { Provider } from "react-redux";
 import store, { persistor } from "./store/store";
 import { PersistGate } from "redux-persist/integration/react";
+import Signup from './pages/users/auth/signup';
+import Login from './pages/users/auth/login';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -39,6 +41,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="*" element={<NotFound />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
             {userRoutes.map((route) => {
               return (
                 <Route

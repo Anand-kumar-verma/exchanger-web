@@ -25,7 +25,8 @@ const CustomInput = ({
   endIcons = null,
   startIcons = null,
   sx={},
-  lableClassName=""
+  lableClassName="",
+  ...rest
 }) => {
   return (
     <div className="flex flex-col justify-center">
@@ -39,19 +40,19 @@ const CustomInput = ({
         hidden={hidden}
         size="small"
         variant={variant}
-        value={value}
+         value={formik?.values[id] || value || ""}
         onFocus={onFocus}
         defaultValue={defaultValue}
         multiline={multiline}
         sx={sx}
-    
         rows={rows}
         error={formik?.errors?.[id] && formik?.touched?.[id] ? true : false}
         onBlur={onBlur || formik?.handleBlur}
-        onChange={onChange}
+        onChange={formik?.handleChange || onChange}
         placeholder={placeholder}
+        //  helperText={formik?.touched[id] && formik?.errors[id]}
         className={classNames(
-          "!rounded !outline-none placeholder:!text-gray-100 overflow-hidden   !capitalize !backdrop-blur-mk h-full w-full !bg-white !bg-opacity-20 !border-opacity-30 !border !border-white",
+          "!rounded !outline-none placeholder:!text-gray-100 overflow-hidden   !capitalize !backdrop-blur-mk h-full w-full !bg-white !bg-opacity-20 !border-opacity-30 !border !border-gray-300",
           className
         )}
         slotProps={{
@@ -66,6 +67,7 @@ const CustomInput = ({
             )
           }
         }}
+         {...rest}
       />
       {formik && (
         <FormHelperText className="!text-red-500 !mx-1">

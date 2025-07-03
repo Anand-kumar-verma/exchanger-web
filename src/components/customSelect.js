@@ -10,7 +10,7 @@ import {
 import classNames from "classnames";
 
 const Placeholder = ({ children }) => {
-  return <div className="text-gray-700">{children}</div>;
+  return <div className="text-gray-400">{children}</div>;
 };
 
 const CustomSelect = ({
@@ -62,14 +62,6 @@ const CustomSelect = ({
           formik?.handleBlur(event);
         }}
         name={id}
-        sx={{
-          minWidth: '350px',
-          width: '100%',
-          maxWidth: '100%',
-          marginTop: 0
-
-        }}
-
         renderValue={
           selectedValue !== ""
             ? undefined
@@ -77,6 +69,7 @@ const CustomSelect = ({
         }
         className={classNames("!m-0 !overflow-hidden !px-0 placeholder:!text-gray-400 !py-0", className)}
         {...rest}
+
       >
         {isLoading
           ? Array.from({ length: 5 }).map((_, index) => (
@@ -93,7 +86,7 @@ const CustomSelect = ({
             : children}
       </Select>
       {formik?.errors && (
-        <FormHelperText sx={{ color: "red" }}>
+        <FormHelperText className="!px-0 !mx-1" sx={{ color: "red" }}>
           {formik?.touched[id] && formik?.errors[id]}
         </FormHelperText>
       )}
