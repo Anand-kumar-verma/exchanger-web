@@ -49,7 +49,8 @@ export default function Login() {
         window.location.reload();
       }
     } catch (e) {
-      console.log(e);
+      console.log(e?.response?.data?.message);
+      toast.error(e?.response?.data?.message || "Something went wrong");
       setLoading(false);
     }
   };
