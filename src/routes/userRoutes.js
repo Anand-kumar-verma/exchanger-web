@@ -2,7 +2,6 @@
 
 import ManageBank from "../pages/users/profilePages/manageBank";
 import NewsAndUpdate from "../pages/users/profilePages/newsAndUpdate";
-import NomineeDetails from "../pages/users/profilePages/nomineeDetails";
 import OfflineManualKYC from "../pages/users/profilePages/offlineManualKYC";
 import OnlineKYC from "../pages/users/profilePages/onlineKYC";
 import ProfileInformation from "../pages/users/profilePages/profileInformation";
@@ -20,6 +19,7 @@ import Order from "../pages/default/order";
 import Transactions from "../pages/default/transactions";
 import Assets from "../pages/default/assets";
 import Home from "../pages/default/home";
+import NomineeDetails from "../pages/users/profilePages/nominee/nomineeDetails";
 export const userRoutes = [
   
     {
